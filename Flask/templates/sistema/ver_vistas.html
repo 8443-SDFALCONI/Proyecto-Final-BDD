@@ -1,0 +1,68 @@
+{% extends "sistema.html" %}
+{% block sistema %}
+<div>
+  <form action="/ver_vistas" method="POST">
+    <div class="form-group row">
+      <div class="col-sm-2">
+      </div>
+    </div>
+  </form>
+  <hr>
+
+  <table class="table table-striped table-hover table-bordered table-sm bg-white">
+    <thead>
+      <tr>
+        <td>ID Provincia</td>
+        <td>ID Canton</td>
+        <td>ID Parroquia</td>
+        <td>Nombre Parroquia</td>
+        <td>Estado Parroquia</td>
+        <td>Nombre Provincia</td>
+      </tr>
+    </thead>
+    {% for row in resultado %}
+    <tr>
+      <td>{{row[0]}}</td>
+      <td>{{row[1]}}</td>
+      <td>{{row[2]}}</td>
+      <td>{{row[3]}}</td>
+      <td>{{row[4]}}</td>
+      <td style="word-break:break-all; width: 200px;">
+        <p style="word-wrap: break-word;  word-wrap: break-word; width: 200px;">{{row[5]}}</p>
+      </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+<table class="table table-striped table-hover table-bordered table-sm bg-white">
+  <thead>
+    <tr>
+      <td>Estado Provincia</td>
+      <td>Nombre Canton</td>
+      <td>Estado Canton</td>
+      <td>ID Permisos</td>
+      <td>Tipo Permisos</td>
+      <td>Estado Permisos</td>
+      <td>Descripcion Permisos</td>
+    </tr>
+  </thead>
+  {% for row in resultado %}
+  <tr>
+    <td>{{row[6]}}</td>
+    <td>{{row[7]}}</td>
+    <td>{{row[8]}}</td>
+    <td>{{row[9]}}</td>
+    <td>{{row[10]}}</td>
+    <td>{{row[11]}}</td>
+    <td style="word-break:break-all; width: 200px;">
+      <p style="word-wrap: break-word;  word-wrap: break-word; width: 200px;">{{row[12]}}</p>
+    </td>
+  </tr>
+  {% endfor %}
+
+  </tbody>
+</table>
+</div>
+{% endblock %}
